@@ -4,6 +4,10 @@ This is the proxy container repository for the [Bitwarden self-hosted on Google 
 
 ## Changes
 
+Builder Image: `caddy:builder-alpine`
 Base Image: `caddy:alpine`
 
-Changes to Base Image: Add tzdata package so timezone is set using `TZ` env variable
+Changes to Base Image:
+
+* Add tzdata package so timezone is set using `TZ` env variable
+* Add Cloudlfare DDNS module
