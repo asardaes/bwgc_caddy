@@ -17,7 +17,7 @@ jobs:
   check:
     runs-on: ubuntu-latest
     outputs:
-      differs: steps.baseupdatecheck.outputs.differs
+      differs: ${{ steps.baseupdatecheck.outputs.differs }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -37,4 +37,4 @@ jobs:
     needs: check
     if: needs.check.outputs.differs == 'true'
     secrets: inherit
-    uses: ./github/workflows/docker-build-on-base-update.yml
+    uses: ./.github/workflows/docker-build-on-push.yml
