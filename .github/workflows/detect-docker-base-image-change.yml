@@ -10,18 +10,12 @@ jobs:
 
   check-update:
     runs-on: ubuntu-latest
-    permissions:
-      actions: write  # for Keepalive
     outputs:
       needs-updating: ${{ steps.check.outputs.needs-updating }}
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      # Keep repo alive: https://github.com/marketplace/actions/keepalive-workflow
-      - name: Keepalive
-        uses: gautamkrishnar/keepalive-workflow@v2
 
       - name: Check if update available
         id: check
