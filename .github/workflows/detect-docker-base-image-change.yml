@@ -11,8 +11,6 @@ jobs:
     permissions:
       contents: write
     outputs:
-      base_image: ${{ steps.get_images.outputs.base_image }}
-      derived_image: ${{ steps.get_images.outputs.derived_image }}
       needs_updating: ${{ steps.check.outputs.needs-updating }}
       diff_images: ${{ steps.check.outputs.diff-images }}
     
@@ -30,7 +28,6 @@ jobs:
       - name: Update changelog
         run: |
           TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
-          BASE_IMAGE="${{ steps.get_images.outputs.base_image }}"
           NEEDS_UPDATE="${{ steps.check.outputs.needs-updating }}"
           
           # Create changelog file if it doesn't exist
@@ -41,7 +38,7 @@ jobs:
           
           # Create log entry
           if [ "$NEEDS_UPDATE" == "true" ]; then          
-            echo "* $TIMESTAMP: Base image $BASE_IMAGE updated: ${{ steps.check.outputs.diff-images }}" >> DOCKER_CHANGELOG.md
+            echo "* $TIMESTAMP: Base image updated: ${{ steps.check.outputs.diff-images }}" >> DOCKER_CHANGELOG.md
           fi
       
       - name: Commit and push changelog
