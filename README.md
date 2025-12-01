@@ -10,4 +10,4 @@ Base Image: `caddy:alpine`
 Changes to Base Image:
 
 * Add tzdata package so timezone is set using `TZ` env variable
-* Add Cloudlfare DDNS module
+* Add Cloudflare DDNS module
