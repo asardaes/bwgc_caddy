@@ -4,8 +4,8 @@ This is the proxy container repository for the [Bitwarden self-hosted on Google 
 
 ## Changes
 
-Builder Image: `caddy:builder-alpine`
-Base Image: `caddy:alpine`
+Builder Image: `caddy:2.11-builder-alpine`
+Base Image: `caddy:2.11-alpine`
 
 Changes to Base Image:
 
