@@ -1,5 +1,5 @@
 FROM caddy:2.11-builder-alpine AS caddy-builder
-RUN xcaddy build --with github.com/caddy-dns/cloudflare
+RUN xcaddy build --with github.com/caddy-dns/cloudflare --with github.com/hslatman/caddy-crowdsec-bouncer/appsec
 
 FROM caddy:2.11-alpine
 COPY --from=caddy-builder /usr/bin/caddy /usr/bin/caddy
