@@ -22,7 +22,7 @@ jobs:
         id: check
         uses: lucacome/docker-image-update-checker@v3
         with:
-          base-image: caddy:2.11-alpine
+          base-image: caddy:alpine
           image: ghcr.io/${{ github.repository }}:master
 
       - name: Update changelog
