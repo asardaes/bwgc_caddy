@@ -12,3 +12,4 @@
 * 2026-04-16 04:21:44 UTC: Base image updated: linux/amd64
 * 2026-05-13 04:33:34 UTC: Base image updated: linux/amd64
 * 2026-06-04 04:54:27 UTC: Base image updated: linux/amd64
+* 2026-06-23 04:40:26 UTC: Base image updated: linux/amd64
